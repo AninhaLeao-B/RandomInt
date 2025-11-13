@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RandomInt - Painel de Controle</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>RandomInt - Painel de Controle</h1>
+
+        <div class="grid-layout">
+            <!-- COLUNA ESQUERDA -->
+            <div class="left-column">
+                <!-- AÇÕES GLOBAIS EM CIMA -->
+                <div class="card">
+                    <h3>Ações Globais</h3>
+                    <div class="controls">
+                        <button class="btn-start" onclick="startAllServers()" id="startAllBtn">Iniciar Todos</button>
+                        <button class="btn-restart" onclick="restartAll()">Reiniciar Tudo</button>
+                    </div>
+                    <div id="startAllProgress" style="margin-top: 6px; font-size: 0.85em; color: #aaa;"></div>
+                </div>
+
+                <!-- SERVIDORES ABAIXO -->
+                <div class="card">
+                    <h3>Servidores</h3>
+                    <div id="servers"></div>
+                </div>
+            </div>
+
+            <!-- COLUNA DIREITA -->
+            <div class="right-column">
+                <!-- GERAR NÚMEROS -->
+                <div class="card generate-card">
+                    <h3>Gerar Números Aleatórios</h3>
+                    <div class="generate-row">
+                        <div class="input-group">
+                            <label for="qtd">Quantidade:</label>
+                            <input type="number" id="qtd" min="1" max="1000" value="10" placeholder="ex: 10">
+                        </div>
+                        <div class="input-group">
+                            <label for="min">Mínimo:</label>
+                            <input type="number" id="min" min="-1000" max="1000" value="1" placeholder="ex: 1">
+                        </div>
+                        <div class="input-group">
+                            <label for="max">Máximo:</label>
+                            <input type="number" id="max" min="-1000" max="1000" value="100" placeholder="ex: 100">
+                        </div>
+                        <div class="generate-buttons">
+                            <button class="btn-gen" onclick="startGeneration()">Gerar</button>
+                            <button class="btn-stop" onclick="stopGeneration()" id="stopBtn" style="display: none;">Parar</button>
+                        </div>
+                    </div>
+                    <div id="progress" style="margin-top: 6px; font-size: 0.85em; color: #aaa;"></div>
+                </div>
+
+                <!-- LOG -->
+                <div class="card log-card">
+                    <h3>Log de Geração
+                        <button class="btn-stop" onclick="clearLog()" style="float: right; font-size: 0.8em; padding: 4px 8px;">
+                            Limpar
+                        </button>
+                    </h3>
+                    <div id="log" class="log">Aguardando dados...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
