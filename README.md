@@ -266,6 +266,6 @@ Este projeto demonstra:
 
 ----------
 
-## 🧑‍💻 Autoria
+## 🧑‍💻 Objetivo
 
 Projeto desenvolvido como atividade prática da disciplina de **Sistemas Distribuídos**.
